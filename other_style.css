@@ -1,1 +1,289 @@
+/* <<<<<<<<<<<<<<<<<<<<   Styling the page layout    >>>>>>>>>>>>>>>>>>> */
+
+body {
+    font-family: Verdana, sans-serif;
+    margin: 0px;
+    background-image: url("images/fulger.jpg");
+  }
+
+* {
+      box-sizing: border-box;
+      /* Sets box-sizing to border-box for all html elements */
+}
+
+.header, .footer {
+    background-color: rgb(0, 0, 45);
+    color: white;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    opacity : 0.9;
+}
+
+.flex_display {
+    display: flex;
+}
+
+.allxspace {
+    width:100%;
+}
+
+#page_header{
+    font-family: "Courier New";
+    text-align: center;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    text-shadow: 3px 3px navy;
+}
+
+.column {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    opacity: 0.9;
+}
+
+.menu {
+    width: 25%;
+}
+
+.content {
+    background-color: #0095bc;
+    width: 75%;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 20px;
+    padding: 5px;
+}
+
+.menu li {
+    background-color: rgb(0, 100, 120);
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    overflow: hidden;
+    /* The overflow is clipped, and the rest of the content is hidden */
+}
+
+.menu li a{
+    color: inherit;
+    /* a elements inherit the color property from parent container */
+}
+
+.menu li a:link {
+    text-decoration: none;
+    /* text is underlined only when we hover the mouse over the link */
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+    /* text is underlined only when we hover the mouse over the link */
+}
+
+.menu li:hover {
+    background-color: #0095bc;
+}
+
+.content p{
+    border-style: dotted;
+    border-color: cyan;
+    border-right: 6px solid cyan;
+    border-left: 6px solid cyan;
+    padding: 8px;
+}
+
+.content p a:link {
+    text-decoration: none;
+}
+
+.content p a:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.content span {
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 125%;
+    /* Setting font family for span elements in this container(.content) */
+}
+
+div.tornado_table {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    left: 30px;
+}
+
+div.tornado_map {
+    width: 50%;
+}
+
+div.tornado_table > p {
+    overflow: hidden;
+}
+
+div.tornado_map > p {
+    overflow: hidden;
+}
+
+table {
+    background-color: #cceeff;
+    color: black;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    left: -30px;
+}
+
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #99ddff;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.take_look {
+    background-color: lime;
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.95;
+}
+
+.image_position {
+    width: 100%;
+    margin: auto;
+}
+
+/* <<<<<<<<<<<<<<<<<<<<   Styling the slideshow    >>>>>>>>>>>>>>>>>>> */
+
+.imageSlides {
+    display:none;
+    /* Initially the slideshow will de empty . First image is loaded using JavaScript . */
+}
+
+.slideshow_container {
+    max-width: 1200px;
+    position: relative;
+    margin: auto;
+    /* centers the container of the images */
+}
+
+.prev_button, .next_button {
+    color: rgb(255, 230, 204);
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    padding: 16px;
+    margin-top: -20px;
+    width: auto;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 0px 3px 3px 0px;
+    transition: 0.5s ease;
+    /* transition to the background */
+}
+
+.next_button {
+    right: 0px;
+    border-radius: 3px 0px 0px 3px;
+    /* Position the "next_button" to the right */
+}
+
+.prev_button:hover, .next_button:hover {
+    background-color: rgba(0,0,0,0.8);
+    /* On hover, add a slightly transparent black background */
+}
+
+.dot {
+    display: inline-block;
+    cursor: pointer;
+    /* When we hover the mouse over the dots , cursor changes to pointer */
+    margin: 0px 2px;
+    height: 15px;
+    width: 15px;
+    background-color: rgb(204, 229, 255);
+    border-radius: 50%;
+    transition: background-color 0.5s ease;
+}
+
+.dots_style {
+    text-align:center;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.active, .dot:hover {
+    background-color: green;
+    /* The dot corresponding to current image is shown in green */
+}
+
+.caption_text {
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 8px;
+    /* Position the caption to the bottom of the image */
+}
+
+.number_text {
+    color: #f2f2f2;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    /* Position the slideshow index to the top left corner of the image */
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* On smaller screens, we are using a smaller size text and smaller buttons */
+@media only screen and (max-width: 400px) {
+  .prev_button, .next_button, .caption_text {
+      font-size: 10px;
+  }
+}
+
+    © 2017 GitHub, Inc.
+    Terms
+    Privacy
+    Security
 
